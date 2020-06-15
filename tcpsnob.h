@@ -50,20 +50,6 @@ int tcpsnob_connect(int sockfd, int ip_type, const char *host, const char *port)
 int tcpsnob_status(int sockfd);
 
 /*
- * Queries getsockopt() for the socket status in an attempt to figure out
- * whether the socket is connected. Note that this should not be used unless
- * there is a good reason - it is always best to simply try and send on the
- * socket in question to see if it is connected. If you want to check if a 
- * previous connection attempt succeeded, you should simply use select(), 
- * poll() or epoll() to wait on the socket and see if it becomes ready for 
- * writing (sending); this indicates the socket connection is established.
- * Returns 0 if the socket is healthy and most likely connected.
- * Returns -1 if the socket reported an error or the socket status could not
- * be queried, both indicating that the socket is most likely not connected.
- */
-int tcpsnob_status(int sockfd);
-
-/*
  * Sends the given data using the given socket.
  * On success, this function returns the number of bytes sent.
  * On error, -1 is returned and errno is set appropriately.
