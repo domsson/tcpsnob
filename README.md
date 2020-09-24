@@ -9,7 +9,14 @@ To get the implementation, define `TCPSNOB_IMPLEMENTATION` before including `tcp
     #define TCPSNOB_IMPLEMENTATION
     #include "tcpsnob.h"
 
-##  Interface
+## Deprecated
+
+Note that the functionality of tcpsnob has been included in 
+[tcpsock](https://github.com/domsson/tcpsock), which can additionally create 
+blocking sockets as well, while only increasing the code by a little bit. 
+tcpsnob is therefore deprecated and won't be maintained any further. 
+
+## Interface
 
 ### `int tcpsnob_create(int ip_type)`
 
